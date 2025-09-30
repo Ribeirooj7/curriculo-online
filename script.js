@@ -9,8 +9,11 @@ function revelarAoRolar() {
     const fundo = rect.bottom;
     const margem = 100;
 
-    if (topo < alturaJanela - visivel) {
+// Se qualquer parte do elemento estiver visível dentro da janela
+    if (topo < alturaJanela - margem && fundo > margem) {
       el.classList.add('active');
+    } else {
+      el.classList.remove('active');
     }
   });
 }
