@@ -3,9 +3,11 @@ function revelarAoRolar() {
   const elementos = document.querySelectorAll('.reveal');
   const alturaJanela = window.innerHeight;
 
-  elementos.forEach(el => {
-    const topo = el.getBoundingClientRect().top;
-    const visivel = 100;
+   elementos.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const topo = rect.top;
+    const fundo = rect.bottom;
+    const margem = 100;
 
     if (topo < alturaJanela - visivel) {
       el.classList.add('active');
